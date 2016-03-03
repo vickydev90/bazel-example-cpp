@@ -1,0 +1,6 @@
+[submodule "submodule/src/bare"]
+	path = submodule/src/bare
+	url = https://github.com/laramiel/bazel-example-cpp-bare.git
+[submodule "submodule/src/remote"]
+	path = submodule/src/remote
+	url = https://github.com/laramiel/bazel-example-cpp-remote.git
