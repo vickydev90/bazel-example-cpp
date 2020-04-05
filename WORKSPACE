@@ -2,7 +2,7 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 git_repository(
   name = "remote",
-  remote = "https://github.com/laramiel/bazel-example-cpp-remote.git",
+  remote = "https://github.com/vickydev90/bazel-example-cpp-remote.git",
   commit = "7cfc081",
 )
 
@@ -15,9 +15,9 @@ cc_library(
 )
 """
 
-new_git_repository(
-  name = "bare",
-  remote = "https://github.com/laramiel/bazel-example-cpp-bare.git",
-  commit = "e0d67b9",
-  build_file_content = BARE_BUILD
-)
+#new_git_repository(
+#  name = "bare",
+#  remote = "https://github.com/laramiel/bazel-example-cpp-bare.git",
+#  commit = "e0d67b9",
+#  build_file_content = BARE_BUILD
+#)
