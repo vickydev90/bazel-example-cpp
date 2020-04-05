@@ -40,7 +40,7 @@ spec:
               trackingSubmodules: false
             ]], 
             submoduleCfg: [], 
-            userRemoteConfigs: [[credentialsId: 'bazel-git']]])
+            userRemoteConfigs: [[credentialsId: 'bazel-git', url:'https://github.com/vickydev90/bazel-example-cpp.git']]])
         }
       }
       stage('bazel execute') {
