@@ -14,8 +14,8 @@ spec:
   - name: jnlp
     image: jenkins/jnlp-slave
     ttyEnabled: true
-  - name: bazel
-    image: bazel:1.1
+  - name: test
+    image: test:1.0
     command:
     - cat
     tty: true
@@ -45,8 +45,9 @@ spec:
       }
       stage('bazel execute') {
         steps {
-          container('bazel') {
+          container('test') {
             sh """
+              python -V
               export PATH=$PATH:/root/bin
               bazel run :hello
             """
