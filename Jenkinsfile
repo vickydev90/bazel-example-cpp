@@ -27,7 +27,6 @@ spec:
   - name: ssh-key
     secret:
       secretName: ssh-key
-      defaultMode: 0600
   securityContext:
     runAsUser: 0
 """
