@@ -14,18 +14,27 @@ spec:
   - name: jnlp
     image: jenkins/jnlp-slave
     ttyEnabled: true
-  - name: test
-    image: test:1.0
+  - name: gittest
+    image: gittest:1.0
     command:
     - cat
     tty: true
+    volumeMounts:
+    - mountPath: '/root/.ssh',
+      readOnly: true,
+      name: ssh-key
+  volumes:
+  - name: ssh-key
+    secret:
+      secretName: ssh-key
+      defaultMode: 0600
   securityContext:
     runAsUser: 0
 """
         }
     }
     stages {
-      stage('checkout submodule') {
+      /*stage('checkout submodule') {
         steps {
           checkout([
             $class: 'GitSCM',
@@ -42,14 +51,15 @@ spec:
             submoduleCfg: [], 
             userRemoteConfigs: [[credentialsId: 'bazel-git', url:'https://github.com/vickydev90/bazel-example-cpp.git']]])
         }
-      }
+      }*/
       stage('bazel execute') {
         steps {
-          container('test') {
+          container('git') {
             sh """
-              python -V
-              export PATH=$PATH:/root/bin
-              bazel run :hello
+              git clone git@github.com:vickydev90/bazel-example-cpp.git
+              ls -lrth
+              #export PATH=$PATH:/root/bin
+              #bazel run :hello
             """
           }
         }
