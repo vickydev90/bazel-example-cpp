@@ -27,6 +27,7 @@ spec:
   - name: ssh-key
     secret:
       secretName: ssh-key
+      defaultMode: 384
   securityContext:
     runAsUser: 0
 """
@@ -55,6 +56,7 @@ spec:
         steps {
           container('gittest') {
             sh """
+              ls -lrth /root/.ssh
               git clone git@github.com:vickydev90/bazel-example-cpp.git
               ls -lrth
               #export PATH=$PATH:/root/bin
