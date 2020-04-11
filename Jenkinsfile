@@ -56,8 +56,8 @@ spec:
         steps {
           container('gittest') {
             sh """
-              ls -lrth /root/.ssh
-              ssh -i /root/.ssh/id_rsa -tt -o StrictHostKeyChecking=no github.com
+              cat /root/.ssh
+              ssh-keyscan -H github.com >> ~/.ssh/known_hosts
               git clone git@github.com:vickydev90/bazel-example-cpp.git
               #export PATH=$PATH:/root/bin
               #bazel run :hello
