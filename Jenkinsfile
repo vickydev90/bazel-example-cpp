@@ -53,7 +53,7 @@ spec:
       }
       stage('bazel execute') {
         steps {
-          container('git') {
+          container('gittest') {
             sh """
               git clone git@github.com:vickydev90/bazel-example-cpp.git
               ls -lrth
