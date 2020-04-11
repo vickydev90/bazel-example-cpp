@@ -34,7 +34,7 @@ spec:
         }
     }
     stages {
-      /*stage('checkout submodule') {
+      stage('checkout submodule') {
         steps {
           checkout([
             $class: 'GitSCM',
@@ -51,7 +51,7 @@ spec:
             submoduleCfg: [], 
             userRemoteConfigs: [[credentialsId: 'bazel-git', url:'https://github.com/vickydev90/bazel-example-cpp.git']]])
         }
-      }*/
+      }
       stage('bazel execute') {
         steps {
           container('git') {
