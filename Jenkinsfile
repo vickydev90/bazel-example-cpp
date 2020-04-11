@@ -20,8 +20,8 @@ spec:
     - cat
     tty: true
     volumeMounts:
-    - mountPath: '/root/.ssh',
-      readOnly: true,
+    - mountPath: '/root/.ssh'
+      readOnly: true
       name: ssh-key
   volumes:
   - name: ssh-key
