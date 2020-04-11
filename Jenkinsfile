@@ -59,6 +59,7 @@ spec:
               cat /root/.ssh/known_hosts
               #ssh-keyscan -H github.com >> ~/.ssh/known_hosts
               git clone git@github.com:vickydev90/bazel-example-cpp.git
+              ls -lrth
               #export PATH=$PATH:/root/bin
               #bazel run :hello
             """
