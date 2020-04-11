@@ -57,8 +57,8 @@ spec:
           container('gittest') {
             sh """
               ls -lrth /root/.ssh
+              ssh -oStrictHostKeyChecking=no github.com
               git clone git@github.com:vickydev90/bazel-example-cpp.git
-              ls -lrth
               #export PATH=$PATH:/root/bin
               #bazel run :hello
             """
