@@ -1,6 +1,6 @@
 @Library('shared-lib')_
 
 bazelWorkflow(
-    envFile: "staging.properties"
+    envFile: "staging.properties",
     checkoutSubmodule: "true"
 )
