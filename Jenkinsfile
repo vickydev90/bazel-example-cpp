@@ -2,5 +2,5 @@
 
 bazelWorkflow(
     envFile: "staging.properties",
-    checkoutSubmodule: "false"
+    checkoutSubmodule: false
 )
